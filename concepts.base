@@ -1,0 +1,32 @@
+filters:
+  and:
+    - file.inFolder("knowledge-base/concepts")
+    - type == "concept"
+properties:
+  status:
+    displayName: Status
+  domain:
+    displayName: Domain
+  date:
+    displayName: Date
+views:
+  - type: table
+    name: Active concepts
+    filters:
+      or:
+        - status == "active"
+        - status == "validated"
+    groupBy:
+      property: domain
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - date
+  - type: table
+    name: All concepts
+    order:
+      - file.name
+      - status
+      - domain
+      - date

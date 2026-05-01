@@ -1,0 +1,38 @@
+filters:
+  and:
+    - file.inFolder("knowledge-base/decisions")
+    - type == "decision"
+properties:
+  status:
+    displayName: Status
+  decision_maker:
+    displayName: Owner
+  date:
+    displayName: Date
+views:
+  - type: table
+    name: Open
+    filters:
+      or:
+        - status == "open"
+        - status == "proposed"
+    order:
+      - date
+      - file.name
+      - decision_maker
+  - type: table
+    name: Accepted
+    filters: status == "accepted"
+    order:
+      - date
+      - file.name
+      - decision_maker
+  - type: table
+    name: All decisions
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - date
+      - file.name
+      - decision_maker

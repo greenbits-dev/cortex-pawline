@@ -1,0 +1,33 @@
+filters:
+  and:
+    - 'file.inFolder("knowledge-base/stakeholders")'
+    - 'type == "stakeholder"'
+
+properties:
+  side:
+    displayName: "Side"
+  role:
+    displayName: "Role"
+  status:
+    displayName: "Status"
+  last_touched:
+    displayName: "Last touched"
+
+views:
+  - type: table
+    name: "All stakeholders"
+    groupBy:
+      property: side
+      direction: ASC
+    order:
+      - file.name
+      - role
+      - status
+      - last_touched
+
+  - type: cards
+    name: "Cards"
+    order:
+      - file.name
+      - role
+      - last_touched

@@ -1,0 +1,27 @@
+filters:
+  and:
+    - file.inFolder("knowledge-base/deliverables")
+    - type == "deliverable"
+properties:
+  status:
+    displayName: Status
+  audience:
+    displayName: Audience
+  date:
+    displayName: Date
+views:
+  - type: table
+    name: By status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - date
+      - file.name
+      - status
+  - type: table
+    name: Active
+    filters: status == "active"
+    order:
+      - date
+      - file.name

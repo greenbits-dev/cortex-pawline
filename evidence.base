@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.inFolder("knowledge-base/evidence")
+    - type == "evidence"
+properties:
+  confidence:
+    displayName: Confidence
+  source:
+    displayName: Source
+  date:
+    displayName: Date
+views:
+  - type: table
+    name: High-confidence
+    filters: confidence == "high"
+    order:
+      - date
+      - file.name
+      - source
+  - type: table
+    name: All evidence
+    groupBy:
+      property: confidence
+      direction: ASC
+    order:
+      - date
+      - file.name
+      - source
+      - confidence

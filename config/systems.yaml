@@ -1,0 +1,115 @@
+version: 1
+last_updated: 2026-04-15
+owner: priya-shah
+
+systems:
+  cornerstone:
+    vendor: Idexx
+    category: pims
+    role: primary
+    deployment: cloud-hosted
+    clinic_coverage: 60   # of 80 clinics
+    contract_renewal: 2027-09
+    annual_spend_usd: 1450000
+    notes: Standardized 2024-09-12. ~20 clinics still on legacy PIMS pending migration.
+
+  avimark:
+    vendor: Covetrus
+    category: pims
+    role: legacy
+    deployment: on-premise
+    clinic_coverage: 12
+    sunset_target: 2027-Q1
+    annual_spend_usd: 240000
+    notes: All Avimark clinics scheduled for Cornerstone migration in 2026-2027. See pims-migration-pathway.
+
+  evetpractice:
+    vendor: Covetrus
+    category: pims
+    role: legacy
+    deployment: cloud
+    clinic_coverage: 5
+    sunset_target: 2026-Q4
+    annual_spend_usd: 95000
+
+  idexx_neo:
+    vendor: Idexx
+    category: pims
+    role: legacy
+    deployment: cloud
+    clinic_coverage: 3
+    sunset_target: 2026-Q3
+    annual_spend_usd: 48000
+
+  netsuite:
+    vendor: Oracle
+    category: erp
+    role: primary
+    deployment: cloud
+    contract_renewal: 2028-03
+    annual_spend_usd: 380000
+
+  adp:
+    vendor: ADP
+    category: hcm
+    role: primary
+    deployment: cloud
+    contract_renewal: 2026-12
+    annual_spend_usd: 720000
+    notes: Renewal under negotiation. See internal/vendor-negotiations/adp-2026-renewal.md.
+
+  salesforce:
+    vendor: Salesforce
+    category: crm
+    role: primary
+    deployment: cloud
+    contract_renewal: 2027-06
+    annual_spend_usd: 540000
+
+  snowflake:
+    vendor: Snowflake
+    category: warehouse
+    role: primary
+    deployment: cloud
+    contract_renewal: 2027-12
+    annual_spend_usd: 320000
+
+  sigma:
+    vendor: Sigma Computing
+    category: bi
+    role: primary
+    deployment: cloud
+    contract_renewal: 2027-04
+    annual_spend_usd: 180000
+
+  fivetran:
+    vendor: Fivetran
+    category: etl
+    role: primary
+    deployment: cloud
+    annual_spend_usd: 120000
+
+  dbt_cloud:
+    vendor: dbt Labs
+    category: transform
+    role: primary
+    annual_spend_usd: 60000
+
+  hashicorp_vault:
+    vendor: HashiCorp
+    category: secrets
+    role: primary
+    annual_spend_usd: 90000
+
+  antech:
+    vendor: Mars Petcare
+    category: lab
+    role: primary
+    annual_spend_usd: 4200000
+    notes: Consolidated to Antech-primary in 2024. See lab-vendor-consolidation-savings.
+
+  idexx_lab:
+    vendor: Idexx
+    category: lab
+    role: secondary
+    annual_spend_usd: 1100000
