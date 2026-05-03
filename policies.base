@@ -1,0 +1,15 @@
+filters:
+  and:
+    - file.inFolder("knowledge-base/policies")
+    - type == "policy"
+properties:
+  status:
+    displayName: Status
+  owner:
+    displayName: Owner
+views:
+  - type: table
+    name: All policies
+    order:
+      - file.name
+      - owner
